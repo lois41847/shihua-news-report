@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>2026年全国两会前瞻 | 十五五规划开局之年</title>
+    <meta name="description" content="2026年全国两会前瞻报告，聚焦新质生产力、民生保障、社会治理、绿色发展、对外开放等五大热点话题，为十五五规划开局之年提供政策展望。">
+    <meta name="author" content="公关传播中心">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 50%, #fecaca 100%);
+            min-height: 100vh;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+        .container { max-width: 750px; margin: 0 auto; padding: 20px; }
+        header {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 50%, #991b1b 100%);
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 16px;
+            margin-bottom: 24px;
+            box-shadow: 0 10px 40px rgba(220, 38, 38, 0.3);
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(0,0,0,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        h1 { font-size: 28px; font-weight: bold; margin-bottom: 12px; }
+        .subtitle { font-size: 18px; opacity: 0.9; margin-bottom: 16px; }
+        .date { font-size: 16px; opacity: 0.8; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 2px solid #fecaca;
+        }
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #dc2626;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        .overview {
+            font-size: 17px;
+            color: #374151;
+            line-height: 1.8;
+        }
+        .warning-box {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 16px;
+            font-size: 15px;
+            color: #92400e;
+        }
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .schedule-item {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border: 2px solid #93c5fd;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .schedule-dot {
+            width: 12px;
+            height: 12px;
+            background: #dc2626;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+        }
+        .schedule-title { font-weight: bold; font-size: 16px; margin-bottom: 8px; }
+        .schedule-date { font-size: 14px; color: #6b7280; }
+        .day-nav {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .day-btn {
+            flex-shrink: 0;
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: none;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .day-btn.active {
+            background: #dc2626;
+            color: white;
+        }
+        .day-btn:not(.active) {
+            background: #fee2e2;
+            color: #7f1d1d;
+        }
+        .news-card {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 1px solid #7dd3fc;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        .news-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .news-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        .news-source { font-weight: bold; font-size: 16px; color: #1e40af; }
+        .news-title { font-size: 17px; font-weight: bold; color: #1e3a8a; margin-bottom: 8px; }
+        .news-content { font-size: 15px; color: #4b5563; line-height: 1.7; }
+        .quote-card {
+            background: #f0f9ff;
+            border-left: 4px solid #3b82f6;
+            border-radius: 0 12px 12px 0;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+        .quote-author {
+            font-size: 14px;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 8px;
+        }
+        .quote-text {
+            font-size: 16px;
+            color: #1e40af;
+            font-weight: bold;
+            line-height: 1.7;
+        }
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #1f2937;
+            margin: 24px 0 16px;
+        }
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+        }
+        .icon-purple { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+        .icon-blue { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .icon-orange { background: linear-gradient(135deg, #f97316, #ea580c); }
+        .icon-cyan { background: linear-gradient(135deg, #06b6d4, #0891b2); }
+        .icon-red { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        footer {
+            text-align: center;
+            padding: 24px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+        .source-box {
+            background: rgba(255,255,255,0.5);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            border: 1px solid #e5e7eb;
+        }
+        .source-title { font-weight: bold; color: #1f2937; margin-bottom: 8px; }
+        @media (max-width: 640px) {
+            h1 { font-size: 24px; }
+            .schedule-grid { grid-template-columns: 1fr; }
+            .container { padding: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="badge">公关传播中心媒介部 呈报</div>
+            <h1>2026年全国两会舆情专报</h1>
+            <p class="subtitle">"十五五"规划开局之年 · 谋划发展新篇章</p>
+            <div class="date">📅 2026年3月4日-3月11日</div>
+        </header>
+
+        <div class="card">
+            <div class="card-title">
+                <div class="card-icon">📄</div>
+                前瞻概述
+            </div>
+            <div class="overview">
+                <p style="margin-bottom: 16px;">2026年是"十五五"规划开局之年，是全面建设社会主义现代化国家新征程的关键一年。本届全国两会，将审议通过"十五五"规划纲要，为未来五年发展擘画蓝图。</p>
+                <p>从当前政策导向和官方权威媒体报道来看，今年全国两会的热点话题主要集中在：新质生产力发展、民生保障与消费升级、社会治理创新、绿色发展与"双碳"目标、高水平对外开放等领域。</p>
+                <div class="warning-box">
+                    <strong>重要提示：</strong>本页面将实时更新两会期间来自新华网、人民网、澎湃新闻、界面新闻、财联社、证券日报、上海证券报、中国政府网、全国人大网、全国政协网等官方权威媒体的两会资讯。
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="background: linear-gradient(135deg, #eff6ff, #dbeafe); border-color: #93c5fd;">
+            <div class="card-title" style="color: #2563eb;">
+                <div class="card-icon" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">🏛️</div>
+                2026年全国两会时间安排
+            </div>
+            <div class="schedule-grid">
+                <div class="schedule-item">
+                    <div class="schedule-title"><span class="schedule-dot"></span>全国政协十四届四次会议</div>
+                    <div class="schedule-date">2026年3月4日-3月10日，会期7天</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="schedule-title"><span class="schedule-dot"></span>十四届全国人大四次会议</div>
+                    <div class="schedule-date">2026年3月5日-3月11日，会期7天</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">
+            <div class="section-icon icon-purple">📰</div>
+            每日舆情专报
+        </div>
+
+        <div class="day-nav">
+            <button class="day-btn">3月4日<br><small>周三</small></button>
+            <button class="day-btn">3月5日<br><small>周四</small></button>
+            <button class="day-btn active">3月6日<br><small>周五</small></button>
+            <button class="day-btn">3月7日<br><small>周六</small></button>
+            <button class="day-btn">3月8日<br><small>周日</small></button>
+            <button class="day-btn">3月9日<br><small>周一</small></button>
+            <button class="day-btn">3月10日<br><small>周二</small></button>
+            <button class="day-btn">3月11日<br><small>周三</small></button>
+        </div>
+
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 2px solid #e5e7eb;">
+                <div>
+                    <h3 style="font-size: 22px; font-weight: bold; color: #1f2937; margin-bottom: 4px;">3月6日 舆情专报</h3>
+                    <p style="color: #6b7280; font-size: 16px;">周五</p>
+                </div>
+                <div style="background: #d1fae5; color: #065f46; padding: 8px 16px; border-radius: 20px; font-size: 14px; font-weight: bold;">✓ 已发布</div>
+            </div>
+
+            <div style="margin-bottom: 24px;">
+                <div class="section-title" style="margin-top: 0;">
+                    <div class="section-icon" style="background: linear-gradient(135deg, #dc2626, #b91c1c);">📅</div>
+                    今日概述
+                </div>
+                <div style="background: #fef2f2; border-radius: 12px; padding: 20px; border: 1px solid #fecaca;">
+                    <p style="font-size: 17px; color: #374151; line-height: 1.8; margin-bottom: 16px;">今日全国两会进入密集审议和讨论阶段。上午，全国人大上海代表团举行开放团组会议，接受中外媒体集体采访。下午，全国人大举行经济主题记者会，国家发展改革委、财政部、商务部、央行、中国证监会等相关部委负责人出席，就经济形势、宏观政策等回答中外记者提问。外媒持续聚焦中国科技发展与高质量发展信号。人工智能、人形机器人等领域成为国际观察中国的重要切口。</p>
+                    <p style="font-size: 17px; color: #374151; line-height: 1.8;">在"十五五"开局之年的关键时期，全国两会各项议程有序推进，各界代表委员积极建言献策，为中国经济高质量发展凝聚智慧和力量。</p>
+                </div>
+            </div>
+
+            <div class="section-title">
+                <div class="section-icon icon-purple">🌍</div>
+                外媒聚焦
+            </div>
+
+            <div class="news-card">
+                <div class="news-header">
+                    <div class="news-icon">📰</div>
+                    <div>
+                        <div class="news-source">美国《时代》周刊</div>
+                    </div>
+                </div>
+                <div class="news-title">China Could Dominate the Physical AI Future</div>
+                <div class="news-content">China is pulling ahead of the U.S. in physical AI... China controls most of the supply chain that underpins the robotics industry... China's large-scale domestic manufacturing capabilities have driven down the cost of robots, including humanoids.</div>
+            </div>
+
+            <div class="news-card" style="background: linear-gradient(135deg, #f5f3ff, #ede9fe); border-color: #c4b5fd;">
+                <div class="news-header">
+                    <div class="news-icon" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed);">📰</div>
+                    <div>
+                        <div class="news-source" style="color: #5b21b6;">美国《纽约时报》</div>
+                    </div>
+                </div>
+                <div class="news-title" style="color: #5b21b6;">Why Are Chinese People So Optimistic About AI?</div>
+                <div class="news-content">Unlike in the West, Chinese policymakers and the public appear to be much more optimistic about AI, likely due to a focus on real-world applications of AI. Chinese tech companies have focused on practical uses for A.I. in health care, transportation and daily life. Most leading Chinese A.I. models are free to use.</div>
+            </div>
+
+            <div class="news-card" style="background: linear-gradient(135deg, #ecfeff, #cffafe); border-color: #67e8f9;">
+                <div class="news-header">
+                    <div class="news-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">📰</div>
+                    <div>
+                        <div class="news-source" style="color: #0e7490;">新加坡《海峡时报》</div>
+                    </div>
+                </div>
+                <div class="news-content" style="color: #155e75;">The 2026 meetings mark the start of the 15th Five-Year Plan, a blueprint expected to set priorities across economic development, technology and innovation, people's livelihoods, green transition and social security for 2026 to 2030.</div>
+            </div>
+
+            <div class="news-card" style="background: linear-gradient(135deg, #fff7ed, #ffedd5); border-color: #fdba74;">
+                <div class="news-header">
+                    <div class="news-icon" style="background: linear-gradient(135deg, #f97316, #ea580c);">📰</div>
+                    <div>
+                        <div class="news-source" style="color: #9a3412;">英国《路透社》</div>
+                    </div>
+                </div>
+                <div class="news-content" style="color: #7c2d12;">China's new five-year policy blueprint laid out its ambitions to aggressively adopt artificial intelligence throughout the world's second-biggest economy and dominate emerging technologies such as quantum computing and humanoid robots. The country will "seize the commanding heights of science and technological development" and seek "decisive breakthroughs in key core technologies".</div>
+            </div>
+
+            <div class="section-title">
+                <div class="section-icon icon-blue">📖</div>
+                高层声音
+            </div>
+
+            <div class="quote-card">
+                <div class="quote-author">中共中央政治局委员、上海市委书记 陈吉庆</div>
+                <div class="quote-text">上海将加力培育新质生产力，为全国发展挑大梁、作贡献。完全赞成政府工作报告和"十五五"规划纲要草案，上海将持续深化"五个中心"建设，实施扩大内需战略，加力培育新质生产力，深化高水平改革开放，扎实推进人民城市建设，确保"十五五"开好局、起好步。</div>
+            </div>
+
+            <div class="section-title">
+                <div class="section-icon icon-orange">👤</div>
+                民营经济
+            </div>
+
+            <div class="quote-card" style="background: white; border: 1px solid #fed7aa; border-left: 4px solid #f97316;">
+                <div class="quote-author">全国人大代表、格力电器董事长 董明珠</div>
+                <div class="quote-text" style="color: #c2410c;">创新是民营企业的核心竞争力，也是发展新质生产力的关键支撑。唯有以创新驱动突破关键技术、提升产品品质、优化供给结构，才能在激烈市场竞争中占据主动。</div>
+            </div>
+
+            <div class="quote-card" style="background: white; border: 1px solid #fed7aa; border-left: 4px solid #f97316;">
+                <div class="quote-author">全国人大代表、三全食品董事长 陈南</div>
+                <div class="quote-text" style="color: #c2410c;">全面清理"隐性壁垒"，推动民营经济长期健康发展。部分领域和地区的政策、法规及实际操作中，仍存在与民营经济促进法精神不一致、不协调、不适应的隐性壁垒和政策堵点。建议构建"自上而下贯通，自下而上反馈"的清理工作体系。</div>
+            </div>
+
+            <div class="quote-card" style="background: white; border: 1px solid #fed7aa; border-left: 4px solid #f97316;">
+                <div class="quote-author">全国人大代表、河北金融学院校长 杨伟坤</div>
+                <div class="quote-text" style="color: #c2410c;">推进民营经济"整体减负"，构建轻税机制，助推高质量发展。建议推进民营经济"整体减负"，构建轻税机制，优化税费政策与管理方式。</div>
+            </div>
+
+            <div class="section-title">
+                <div class="section-icon icon-cyan">🚀</div>
+                数字经济
+            </div>
+
+            <div class="quote-card" style="background: #ecfeff; border-left: 4px solid #06b6d4;">
+                <div class="quote-author">全国人大代表、小米集团创始人 雷军</div>
+                <div class="quote-text" style="color: #0e7490;">推动人形机器人工程化落地。突破工艺稳定性与成本瓶颈，扩大智能制造应用场景，加强安全标准体系建设。</div>
+            </div>
+
+            <div class="quote-card" style="background: #ecfeff; border-left: 4px solid #06b6d4;">
+                <div class="quote-author">全国人大代表、海尔集团董事局主席 周云杰</div>
+                <div class="quote-text" style="color: #0e7490;">建立具身智能标准体系，赋能工业智能化发展。加快发展具身智能赋能工业智能化，建议建立具身智能标准体系，打造"AI + 制造"创新平台。</div>
+            </div>
+
+            <div class="quote-card" style="background: #ecfeff; border-left: 4px solid #06b6d4;">
+                <div class="quote-author">全国政协委员、天娱数科董事长 贺晗</div>
+                <div class="quote-text" style="color: #0e7490;">破解具身智能发展瓶颈，启动国家级具身数据要素工程。具身智能面临数据荒、泛化能力不足等问题，建议建国家级数据采集中心，统一数据标准。</div>
+            </div>
+
+            <div class="section-title">
+                <div class="section-icon icon-red">🛡️</div>
+                未成年人保护
+            </div>
+
+            <div class="quote-card" style="background: #fef2f2; border-left: 4px solid #ef4444;">
+                <div class="quote-author">全国政协委员、科德数控股份有限公司董事长 于本宏</div>
+                <div class="quote-text" style="color: #b91c1c;">将16周岁设定为未成年人注册使用社交类平台的"数字成年年龄"。商业平台以流量最大化为导向的算法推荐机制，与未成年人身心发展规律之间存在根本性冲突。应借鉴国际立法经验，限制16岁以下未成年人注册使用社交软件。</div>
+            </div>
+
+            <div style="background: #eff6ff; border-radius: 12px; padding: 16px; border: 1px solid #bfdbfe; margin-top: 24px;">
+                <p style="font-size: 14px; color: #1e40af;"><strong>权威信息来源：</strong>新华网、人民网、澎湃新闻、界面新闻、财联社、证券日报、上海证券报、中国政府网、全国人大网、全国政协网</p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="source-box">
+                <div class="source-title">权威信息来源</div>
+                <p style="color: #6b7280;">新华网、人民网、澎湃新闻、界面新闻、财联社、证券日报、上海证券报、中国政府网、全国人大网、全国政协网</p>
+            </div>
+            <p>编制单位：公关传播中心媒介部 | 编制日期：2026年全国两会期间每日更新</p>
+            <p style="color: #9ca3af; margin-top: 8px;">本报告仅供内部参考使用</p>
+        </footer>
+    </div>
+</body>
+</html>
